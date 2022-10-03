@@ -1,0 +1,11 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/modules.xml
+out/
+.idea/
+.git/
+*.iml
+target/
+pom.xml
+test/
