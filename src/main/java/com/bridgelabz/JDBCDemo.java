@@ -1,8 +1,5 @@
 package com.bridgelabz;
-import java.sql.Connection;
-import java.sql.Driver;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Enumeration;
 
 
@@ -24,6 +21,13 @@ public class JDBCDemo {
             System.out.println("connection is successfully");
         }catch (Exception e){
             System.out.println(e.getMessage());
+        }
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("select * from payroll_service.employee_payroll");
+        System.out.println("Retrive the Employee Payroll");
+        while (resultSet.next()) {
+            System.out.println(resultSet.getInt("id") + " " + resultSet.getString("name")
+                    + " " + resultSet.getString("start"));
         }
     }
 }
